@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section id="hero">
+        <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+            <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+            <div class="carousel-inner" role="listbox">
+
+                <!-- Slide 1 -->
+                <div class="carousel-item active" style="background-image: url(/assets/img/slide/1.jpg);"></div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item" style="background-image: url(/assets/img/slide/2.jpg);"></div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-item" style="background-image: url(/assets/img/slide/3.jpg);"></div>
+
+            </div>
+
+            <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+            </a>
+
+            <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+            </a>
+
+        </div>
+    </section><!-- End Hero -->
+<div class="bs-example" data-example-id="striped-table">
+    <h2 style="text-align: center;padding: 10px">Thú Cưng</h2>
+    <div class="row portfolio-container">
+        {% for pets in pet %}
+            <div class="col-lg-4 col-md-6 portfolio-item filter-app" style="padding: 20px">
+                <div class="portfolio-wrap" style="width: 250px">
+                    <a href="{{path('app_PetsDetails',{'id':pets.id})}} ">
+                    <div style="height: 350px;">
+                    <img src="{{ asset('upload/productImages/' ~ pets.Image) }}"  style="width: 100%" class="img-fluid" alt=""/>
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>{{ pets.PetName }}</h4>
+                        <p>{{ pets.Price }}</p>
+                    </div>
+                </a>
+                </div>
+            </div>
+
+
+        {% endfor %}
+    </div>
+</div><br><br>
+{% endblock %}

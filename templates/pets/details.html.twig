@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <br><br><br><br>
+<a href="{{ path('app_pets') }}" class="btn btn-default">Back to Product List</a>
+<hr/>
+
+    <div class="container" >
+        <div class="row" style="background: #eaeaea; border-radius: 10px">
+            <div class="col-2" style="padding: 10px">
+                <img src="{{ asset('upload/productImages/' ~ pet.Image) }}" class="img-fluid" alt=""/>
+            </div>
+            <div class="col-9" style="padding: 10px">
+                <h2 class="page-header">{{ pet.petName }}</h2>
+                <p style="color: red"><b>{{ pet.price }}đ</b></p>
+                <p>Age: {{ pet.age }}</p>
+                <p>Sex: {{ pet.sex }}</p>
+                <div>
+                    <a href="{{ path('app_petsEdit', {'id': pet.id}) }} " class='btn btn-edit'>Edit</a>
+                    <a href="{{ path('app_petsDelete', {'id': pet.id}) }} "class='btn btn-danger'>Delete</a>
+                </div>
+            </div>
+        </div>
+    </div><br><br>
+
+    <style>
+        .btn-edit{
+            border-color: green;
+            color: green;
+        }
+        .btn-edit:hover{
+            background: green;
+            color: white;
+        }
+    </style>
+{% endblock %}

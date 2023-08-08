@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {{ form_start(form) }}
+    <div class="form-group">
+        <label for="category">Category</label>
+        {{ form_widget(form.category,{
+            'attr':{
+                'class':'form-control'
+            }
+        }) }}
+    </div>
+    <div class="form-group">
+        <label for="category">Product Name:</label>
+        {{ form_widget(form.PetName,{
+            'attr':{
+                'class':'form-control',
+                'placeholder': 'Product name'
+            }
+        }) }}
+    </div>
+    <div class="form-group">
+        <label for="category">Price:</label>
+        {{ form_widget(form.Price,{
+            'attr':{
+                'class':'form-control',
+                'placeholder': 'Price'
+            }
+        }) }}
+    </div>
+    <div class="form-group">
+        <label for="description">Sex</label>
+        {{ form_widget(form.Sex,{
+            'attr':{
+                'class':'form-control',
+                'placeholder': 'Description'
+            }
+        }) }}
+    </div>
+
+    <div class="form-group">
+        <label for="due_date">Age</label>
+        {{ form_widget(form.Age,{
+            'attr':{
+                'class':'form-control'
+            }
+        }) }}
+    </div>
+    <div class="form-group">
+        <label for="due_date">Image</label>
+        {{ form_widget(form.Image,{
+
+        }) }}
+    </div>
+    <input type="submit" name="app_petsEdit" value="Edit" class="btn btn-primary"/>
+    {{ form_end(form) }}
+{% endblock %}
+
